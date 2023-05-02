@@ -68,3 +68,21 @@ async function footer(el) {
   <span>&#169;2023 - https://apx.school</span>
 </div>`;
 }
+
+async function card(el, index, cardType) {
+  let cardEl;
+  let data;
+  if (cardType == "services") {
+    data = await getServices();
+    cardEl = document.createElement("div.");
+  } else if (cardType == "repos") {
+    data = await getRepos();
+    cardEl = document.createElement("a");
+    cardEl.href = data[index].url;
+  }
+  cardEl.classList = "card";
+  cardEl.innerHTML = `<img src=${data[index].image} alt="" class="card__image" />
+<h2 class="card__title">${data[index].title}</h2>
+<p class="card__description">${data[index].description}</p>`;
+  el.appendChild(cardEl);
+}

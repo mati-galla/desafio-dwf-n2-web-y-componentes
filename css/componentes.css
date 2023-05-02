@@ -1,15 +1,6 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Poppins";
-}
-
 .header {
   width: 100vw;
+  min-width: 375px;
   height: 114px;
   padding: 0 24px;
   display: flex;
@@ -27,7 +18,7 @@ body {
 }
 
 .logo {
-  color: white;
+  color: #eeeeee;
 }
 
 .header__menu {
@@ -42,7 +33,7 @@ body {
   grid-template-rows: 1fr 1fr 1fr;
   justify-content: center;
   gap: 4px;
-  border: solid 4px white;
+  border: solid 4px #eeeeee;
   border-radius: 2px;
   cursor: pointer;
 }
@@ -52,7 +43,7 @@ body {
   height: 4px;
   margin: auto;
   border-radius: 2px;
-  background-color: white;
+  background-color: #eeeeee;
 }
 
 .mobile-menu {
@@ -64,6 +55,7 @@ body {
   display: none;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 }
 
 .mobile-menu__close-button {
@@ -73,7 +65,7 @@ body {
   margin-right: 20px;
   font-size: 40px;
   font-weight: 700;
-  color: white;
+  color: #eeeeee;
   cursor: pointer;
 }
 
@@ -87,7 +79,7 @@ body {
 }
 
 .menu-link {
-  color: white;
+  color: #eeeeee;
   text-decoration: none;
   cursor: pointer;
 }
@@ -140,7 +132,7 @@ body {
 
 .page-links a {
   text-decoration: none;
-  color: white;
+  color: #eeeeee;
 }
 
 .page-links i {
@@ -159,7 +151,7 @@ body {
 }
 
 .copyright-notice {
-  color: white;
+  color: #eeeeee;
 }
 
 @media only screen and (min-width: 960px) {
@@ -183,5 +175,42 @@ body {
 
   .copyright-notice {
     margin: 75px 0 40px 0;
+  }
+}
+
+.card {
+  width: fit-content;
+  height: 480px;
+  margin: auto;
+  padding: 40px 22px 0 22px;
+  background-color: rgba(57, 62, 70, 0.5);
+  backdrop-filter: blur(2px);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.card__image,
+.card__title,
+.card__description {
+  width: 280px;
+  color: #eeeeee;
+}
+
+.card__title {
+  text-align: center;
+}
+
+.card__description {
+  max-height: 130px;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 960px) {
+  .card {
+    height: 520px;
+    padding: 40px 40px 0 40px;
+    margin: 0 auto;
   }
 }

@@ -24,7 +24,16 @@ async function createFooter() {
   await footer(footerEl);
 }
 
+async function createServiceCards() {
+  const cardsContainer = document.querySelector(".cards-container");
+  const cardType = "services";
+  for (let i = 2; i > -1; i--) {
+    await card(cardsContainer, i, cardType);
+  }
+}
+
 (function () {
   createHeader();
   createFooter();
+  createServiceCards();
 })();

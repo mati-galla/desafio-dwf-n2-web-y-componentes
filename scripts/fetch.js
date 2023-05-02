@@ -31,6 +31,8 @@ async function getServices() {
     };
   });
 
+  // console.log(await servicesData);
+
   return await servicesData;
 }
 
@@ -49,11 +51,12 @@ async function getRepos() {
       title: item.fields.title,
       description: item.fields.description,
       image: "https:" + img,
+      url: item.fields.url,
     };
   });
 
   return await reposData;
 }
 
-const servicesData = getServices();
+// getServices();
 const reposData = getRepos();
