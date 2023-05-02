@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins";
+}
+
+.header {
+  width: 100vw;
+  height: 114px;
+  padding: 0 24px;
+  display: flex;
+  background-color: #13171c;
+  justify-content: space-between;
+  align-items: center;
+
+  /* REVISAR QUE FUNCIONE CORRECTAMENTE */
+  position: fixed;
+}
+
+.logo {
+  color: white;
+}
+
+.header__menu {
+  display: none;
+}
+
+.header__hamburger-menu {
+  width: 40px;
+  height: 40px;
+  padding: 6px 0;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-content: center;
+  gap: 4px;
+  border: solid 4px white;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.hamburger-menu__bar {
+  width: 20px;
+  height: 4px;
+  margin: auto;
+  border-radius: 2px;
+  background-color: white;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #13171c;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu__close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  margin-right: 20px;
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+}
+
+.mobile-menu__links {
+  width: 275px;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.menu-link {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mobile-menu .menu-link {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+@media only screen and (min-width: 960px) {
+  .header__hamburger-menu {
+    display: none;
+  }
+
+  .header__menu {
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header__menu > .menu-link {
+    font-size: 18px;
+    font-weight: 400;
+  }
+}
