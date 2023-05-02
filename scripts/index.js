@@ -1,9 +1,9 @@
-function createHeader() {
+async function createHeader() {
   const headerEl = document.querySelector(".header");
-  header(headerEl);
+  await header(headerEl);
 
   const ddMenuContainer = document.querySelector(".mobile-menu-container");
-  mobileMenu(ddMenuContainer);
+  await mobileMenu(ddMenuContainer);
 
   const ddMenu = ddMenuContainer.querySelector(".mobile-menu");
   const hamburgerMenu = headerEl.querySelector(".header__hamburger-menu");
@@ -19,6 +19,12 @@ function createHeader() {
   });
 }
 
+async function createFooter() {
+  const footerEl = document.querySelector(".footer");
+  await footer(footerEl);
+}
+
 (function () {
   createHeader();
+  createFooter();
 })();

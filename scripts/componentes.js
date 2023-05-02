@@ -1,10 +1,10 @@
-function header(el) {
+async function header(el) {
+  const imagesData = await getImages();
+  const indexLogo = await imagesData.findIndex((e) => e.title == "Logo MG");
+  const logo = await imagesData[indexLogo].url;
   el.innerHTML = `
 <div class="header__left">
-  <figure class="logo">
-    <span>Tu logo</span>
-    <img src="" alt="" />
-  </figure>
+    <img class="logo" src="${logo}" alt="" />
 </div>
 
 <div class="header__right">
@@ -22,7 +22,7 @@ function header(el) {
 </div>`;
 }
 
-function mobileMenu(el) {
+async function mobileMenu(el) {
   el.innerHTML = `<div class="mobile-menu">
   <span class="mobile-menu__close-button">X</span>
   <nav class="mobile-menu__links">
@@ -30,5 +30,41 @@ function mobileMenu(el) {
     <a href="" class="menu-link">Servicios</a>
     <a href="" class="menu-link">Contacto</a>
   </nav>
+</div>`;
+}
+
+async function footer(el) {
+  const imagesData = await getImages();
+  const indexLogo = await imagesData.findIndex((e) => e.title == "Logo MG");
+  const logo = await imagesData[indexLogo].url;
+  const indexLinkedIn = await imagesData.findIndex(
+    (e) => e.title == "Icono LinkedIn"
+  );
+  const linkedin = await imagesData[indexLinkedIn].url;
+  const indexGitHub = await imagesData.findIndex(
+    (e) => e.title == "Icono GitHub"
+  );
+  const github = await imagesData[indexGitHub].url;
+  const indexTwitter = await imagesData.findIndex(
+    (e) => e.title == "Icono Twitter"
+  );
+  const twitter = await imagesData[indexTwitter].url;
+
+  el.innerHTML = ` <img class="logo" src="${logo}" alt="" />
+
+<div class="page-links">
+  <a href=""><i class="fas fa-house"></i> Home</a>
+  <a href=""><i class="fas fa-user"></i> Servicios</a>
+  <a href=""><i class="fas fa-phone"></i> Contacto</a>
+</div>
+
+<div class="social-links">
+  <a href=""><img src="${linkedin}" alt=""></a>
+  <a href=""><img src="${github}" alt=""></a>
+  <a href=""><img src="${twitter}" alt=""></a>
+</div>
+
+<div class="copyright-notice">
+  <span>&#169;2023 - https://apx.school</span>
 </div>`;
 }

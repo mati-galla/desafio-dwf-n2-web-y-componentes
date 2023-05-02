@@ -55,6 +55,5 @@ async function getRepos() {
   return await reposData;
 }
 
-const imagesData = getImages();
 const servicesData = getServices();
 const reposData = getRepos();
