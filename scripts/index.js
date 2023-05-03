@@ -19,11 +19,6 @@ async function createHeader() {
   });
 }
 
-function createFooter() {
-  const footerEl = document.querySelector(".footer");
-  footer(footerEl);
-}
-
 async function createServiceCards() {
   const cardsContainer = document.querySelector(".cards-container");
   const cardType = "services";
@@ -32,8 +27,27 @@ async function createServiceCards() {
   }
 }
 
+async function createContactForm() {
+  const contactEl = document.querySelector(".contact");
+  await contactForm(contactEl);
+}
+
+async function createFooter() {
+  const footerEl = document.querySelector(".footer");
+  await footer(footerEl);
+}
+
+async function addBackground() {
+  const imagesData = await getImages();
+  const indexBackground = await imagesData.findIndex(
+    (e) => e.title == "Background Doodle"
+  );
+  const backgroundImg = await imagesData[indexBackground].url;
+  const elsWithBg = document.querySelectorAll(".background");
+  elsWithBg.forEach((e) => (e.style.background = `url(${backgroundImg})`));
+}
+
 (async function () {
-  createHeader();
   const imagesData = await getImages();
   const welcomeImage = document.querySelector(".welcome__image");
   const presentationPhoto = document.querySelector(".presentation__photo");
@@ -45,6 +59,10 @@ async function createServiceCards() {
   );
   welcomeImage.src = imagesData[welcomeImgIndex].url;
   presentationPhoto.src = imagesData[presentationPhotoIndex].url;
+
+  createHeader();
   createServiceCards();
+  createContactForm();
   createFooter();
+  addBackground();
 })();

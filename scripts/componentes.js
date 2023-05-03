@@ -86,3 +86,38 @@ async function card(el, index, cardType) {
 <p class="card__description">${data[index].description}</p>`;
   el.appendChild(cardEl);
 }
+
+async function contactForm(el) {
+  el.innerHTML = `<div class="contact__container">
+  <h2 class="contact__title">Escribime</h2>
+  <form class="contact-form" action="">
+    <div class="contact-form__row">
+      <label class="contact-form__label" for="fullname">Nombre</label>
+      <input
+        class="contact-form__input"
+        type="text"
+        id="fullname"
+        placeholder="Tu nombre" />
+    </div>
+    <div class="contact-form__row">
+      <label class="contact-form__label" for="email">Email</label>
+      <input
+        class="contact-form__input"
+        type="text"
+        id="email"
+        placeholder="tu@mail.com" />
+    </div>
+    <div class="contact-form__row">
+      <label class="contact-form__label" for="message">Mensaje</label>
+      <textarea
+        id="message"
+        cols="30"
+        rows="10"
+        class="contact-form__textarea"></textarea>
+    </div>
+    <button class="send-button">
+      Enviar <i class="fa-regular fa-paper-plane"></i>
+    </button>
+  </form>
+</div>`;
+}
