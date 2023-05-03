@@ -7,11 +7,114 @@
 body {
   min-width: 375px;
   font-family: "Poppins";
+  background-color: #13171c;
+}
+
+.welcome {
+  height: 724px;
+}
+
+.welcome__title {
+  width: 280px;
+  margin: 70px auto 54px auto;
+  font-size: 60px;
+  font-weight: 700;
+  color: #00adb5;
+  text-align: center;
+}
+
+.welcome__title span {
+  color: #eeeeee;
+}
+
+.welcome__image {
+  display: block;
+  margin: auto;
+}
+
+@media only screen and (min-width: 960px) {
+  .welcome {
+    height: 1024px;
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .welcome__title {
+    margin: 0;
+    font-size: 96px;
+    text-align: left;
+    width: 360px;
+  }
+
+  .welcome__image {
+    height: 340px;
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 1250px) {
+  .welcome__title {
+    width: fit-content;
+    text-align: left;
+  }
+}
+
+.presentation {
+  height: 790px;
+  padding: 71px 44px;
+  background-color: #192130;
+}
+
+.presentation__container {
+  max-width: 600px;
+  margin: auto;
+}
+
+.presentation__title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #eeeeee;
+}
+
+.presentation__text {
+  margin: 29px 0 38px 0;
+  color: #eeeeee;
+}
+
+.presentation__photo {
+  width: 287px;
+  margin: auto;
+  display: block;
+}
+
+@media only screen and (min-width: 960px) {
+  .presentation {
+    height: 935px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+  }
+
+  .presentation__container {
+    width: 389px;
+    margin: 0;
+  }
+
+  .presentation__title {
+    font-size: 64px;
+  }
+
+  .presentation__photo {
+    width: 450px;
+    margin: 0;
+  }
 }
 
 .services {
   padding: 85px 0 125px 0;
-  background-color: #13171c;
 }
 
 .services__title {

@@ -19,9 +19,9 @@ async function createHeader() {
   });
 }
 
-async function createFooter() {
+function createFooter() {
   const footerEl = document.querySelector(".footer");
-  await footer(footerEl);
+  footer(footerEl);
 }
 
 async function createServiceCards() {
@@ -32,8 +32,19 @@ async function createServiceCards() {
   }
 }
 
-(function () {
+(async function () {
   createHeader();
-  createFooter();
+  const imagesData = await getImages();
+  const welcomeImage = document.querySelector(".welcome__image");
+  const presentationPhoto = document.querySelector(".presentation__photo");
+  const welcomeImgIndex = await imagesData.findIndex(
+    (e) => e.title == "Rocket Icon"
+  );
+  const presentationPhotoIndex = await imagesData.findIndex(
+    (e) => e.title == "Foto Propia"
+  );
+  welcomeImage.src = imagesData[welcomeImgIndex].url;
+  presentationPhoto.src = imagesData[presentationPhotoIndex].url;
   createServiceCards();
+  createFooter();
 })();
