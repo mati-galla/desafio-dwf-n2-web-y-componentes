@@ -10,11 +10,16 @@ body {
   background-color: #13171c;
 }
 
-.welcome {
+/* Welcome Section Styles */
+.welcome,
+.services__title-container,
+.portfolio__title-container {
   height: 724px;
 }
 
-.welcome__title {
+.welcome__title,
+.services__title-container > .services__title,
+.portfolio__title-container > .portfolio__title {
   width: 280px;
   margin: 70px auto 54px auto;
   font-size: 60px;
@@ -27,13 +32,17 @@ body {
   color: #eeeeee;
 }
 
-.welcome__image {
+.welcome__image,
+.services__image,
+.portfolio__image {
   display: block;
   margin: auto;
 }
 
 @media only screen and (min-width: 960px) {
-  .welcome {
+  .welcome,
+  .services__title-container,
+  .portfolio__title-container {
     height: 1024px;
     display: flex;
     gap: 100px;
@@ -41,26 +50,48 @@ body {
     align-items: center;
   }
 
-  .welcome__title {
+  .welcome__title,
+  .services__title-container > .services__title,
+  .portfolio__title-container > .portfolio__title {
     margin: 0;
     font-size: 96px;
     text-align: left;
+  }
+
+  .welcome__title {
     width: 360px;
+  }
+
+  .services__title-container > .services__title,
+  .portfolio__title-container > .portfolio__title {
+    width: 445px;
   }
 
   .welcome__image {
     height: 340px;
     margin: 0;
   }
+  .services__image,
+  .portfolio__image {
+    height: 281px;
+    margin: 0;
+  }
+}
+
+.cards-container a {
+  text-decoration: none;
 }
 
 @media only screen and (min-width: 1250px) {
-  .welcome__title {
+  .welcome__title,
+  .services__title-container > .services__title,
+  .portfolio__title-container > .portfolio__title {
     width: fit-content;
     text-align: left;
   }
 }
 
+/* Presentation Section Styles */
 .presentation {
   height: 790px;
   padding: 71px 44px;
@@ -113,9 +144,7 @@ body {
   }
 }
 
-.services {
-  padding: 85px 0 125px 0;
-}
+/* Services & Portfolio Sections Styles */
 
 .services__title {
   margin-bottom: 65px;
@@ -128,6 +157,23 @@ body {
   color: #eeeeee;
 }
 
+.cards-container {
+  height: 100%;
+  padding: 85px 0 125px;
+}
+
+.portfolio__show-hide-button {
+  grid-column: 1 / span 3;
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+}
+
+.portfolio__show-hide-button span {
+  cursor: pointer;
+  color: #eeeeee;
+}
+
 @media only screen and (min-width: 960px) {
   .services__title {
     font-size: 64px;
@@ -135,7 +181,6 @@ body {
 }
 
 .cards-container {
-  width: 375px;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -145,13 +190,18 @@ body {
 
 @media only screen and (min-width: 1250px) {
   .cards-container {
-    width: 1170px;
-    flex-direction: row;
-    padding: 0 45px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 85px 45px 125px 45px;
     gap: 45px;
+  }
+
+  .services__title {
+    grid-column: 1 / span 3;
   }
 }
 
+/* Contact Section Styles */
 .contact {
-  height: 1024px;
+  height: 850px;
 }
