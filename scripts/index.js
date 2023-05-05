@@ -1,3 +1,5 @@
+var imagesData = [];
+
 async function createServiceCards() {
   const cardsContainerEl = document.querySelector(".cards-container");
   const cardType = "services";
@@ -46,8 +48,6 @@ function handleFormSubmit(e) {
 }
 
 async function addBackground() {
-  const imagesData = await getImages();
-
   const indexBackground = await imagesData.findIndex(
     (e) => e.title == "Background Doodle"
   );
@@ -58,7 +58,7 @@ async function addBackground() {
 
 async function createHeader() {
   const headerEl = document.querySelector(".header");
-  await header(headerEl);
+  await header(headerEl, imagesData);
 
   const ddMenuContainer = document.querySelector(".mobile-menu-container");
   await mobileMenu(ddMenuContainer);
@@ -78,7 +78,6 @@ async function createHeader() {
 }
 
 async function createWelcome() {
-  const imagesData = await getImages();
   const welcomeImage = document.querySelector(".welcome__image");
   const welcomeImgIndex = await imagesData.findIndex(
     (e) => e.title == "Rocket Icon"
@@ -87,7 +86,6 @@ async function createWelcome() {
 }
 
 async function createPresentation() {
-  const imagesData = await getImages();
   const presentationPhoto = document.querySelector(".presentation__photo");
   const presentationPhotoIndex = await imagesData.findIndex(
     (e) => e.title == "Foto Propia"
@@ -96,7 +94,6 @@ async function createPresentation() {
 }
 
 async function createServices() {
-  const imagesData = await getImages();
   if (document.querySelector(".services__title-container")) {
     const servicesImage = document.querySelector(".services__image");
     const servicesImgIndex = await imagesData.findIndex(
@@ -108,7 +105,6 @@ async function createServices() {
 }
 
 async function createPortfolio() {
-  const imagesData = await getImages();
   const portfolioImage = document.querySelector(".portfolio__image");
   const portfolioImgIndex = await imagesData.findIndex(
     (e) => e.title == "Icono Maletín"
@@ -148,10 +144,11 @@ async function createContact() {
 
 async function createFooter() {
   const footerEl = document.querySelector(".footer");
-  await footer(footerEl);
+  await footer(footerEl, imagesData);
 }
 
 (async function () {
+  imagesData = await getImages();
   if (document.querySelector(".header")) createHeader();
   if (document.querySelector(".welcome")) createWelcome();
   if (document.querySelector(".presentation")) createPresentation();

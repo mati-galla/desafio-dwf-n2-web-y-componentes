@@ -1,5 +1,4 @@
-async function header(el) {
-  const imagesData = await getImages();
+async function header(el, imagesData) {
   const indexLogo = await imagesData.findIndex((e) => e.title == "Logo MG");
   const logo = await imagesData[indexLogo].url;
   el.innerHTML = `
@@ -101,8 +100,7 @@ async function contactForm(el) {
 </div>`;
 }
 
-async function footer(el) {
-  const imagesData = await getImages();
+async function footer(el, imagesData) {
   const indexLogo = await imagesData.findIndex((e) => e.title == "Logo MG");
   const logo = await imagesData[indexLogo].url;
   const indexLinkedIn = await imagesData.findIndex(

@@ -307,7 +307,8 @@
   width: 48px;
 }
 
-.copyright-notice {
+.copyright-notice a {
+  text-decoration: none;
   color: #eeeeee;
 }
 
@@ -332,10 +333,5 @@
 
   .copyright-notice {
     margin: 75px 0 40px 0;
-  }
-
-  .copyright-notice a {
-    text-decoration: none;
-    color: #eeeeee;
   }
 }
