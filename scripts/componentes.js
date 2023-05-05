@@ -127,12 +127,12 @@ async function footer(el) {
   </div>
   
   <div class="social-links">
-    <a href="https://www.linkedin.com/"><img src="${linkedin}" alt=""></a>
-    <a href="https://github.com/mati-galla"><img src="${github}" alt=""></a>
-    <a href="https://twitter.com/MaatyGallardo"><img src="${twitter}" alt=""></a>
+    <a href="https://www.linkedin.com/" target="_blank"><img src="${linkedin}" alt=""></a>
+    <a href="https://github.com/mati-galla" target="_blank"><img src="${github}" alt=""></a>
+    <a href="https://twitter.com/MaatyGallardo" target="_blank"><img src="${twitter}" alt=""></a>
   </div>
   
   <div class="copyright-notice">
-    <a href="https://apx.school">&#169;2023 - https://apx.school</a>
+    <a href="https://apx.school" target="_blank">&#169;2023 - https://apx.school</a>
   </div>`;
 }
